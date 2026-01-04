@@ -43,6 +43,7 @@ ordinal_features = ['fbs', 'restecg', 'slope', 'ca']
 nominal_features = ['sex', 'cp', 'fbs', 'exang', 'thal']
 
 Using pipelines, we have imputed and scaled required features and some more adjustments and in the end of this step the data is ready for model.
+
 Next step is modeling:
 
 we use 5 models(KNN, Logistic_Regression, LDA, QDA, Decision_Tree) and compare the results.
@@ -52,28 +53,24 @@ We can see the differences in models using ROC cure:
  
 
 --- 10-Fold Cross-Validation (Robustness Check) ---
+
 Model: KNN
-  All 10 scores: [0.742 0.806 0.833 0.8   0.9   0.933 0.733 0.8   0.8   0.733]
   Mean Accuracy: 0.808
   Std Deviation: 0.064
 --------------------
 Model: LogisticRegression
-  All 10 scores: [0.871 0.871 0.833 0.8   0.9   1.    0.833 0.8   0.733 0.8  ]
   Mean Accuracy: 0.844
   Std Deviation: 0.069
 --------------------
 Model: DecisionTree
-  All 10 scores: [0.935 0.742 0.733 0.667 0.767 0.833 0.733 0.633 0.733 0.733]
   Mean Accuracy: 0.751
   Std Deviation: 0.080
 --------------------
 Model: LDA
-  All 10 scores: [0.871 0.871 0.8   0.767 0.867 1.    0.833 0.8   0.733 0.8  ]
   Mean Accuracy: 0.834
   Std Deviation: 0.070
 --------------------
 Model: QDA
-  All 10 scores: [0.806 0.839 0.733 0.733 0.767 0.933 0.8   0.7   0.733 0.8  ]
   Mean Accuracy: 0.785
   Std Deviation: 0.064
 
@@ -89,19 +86,19 @@ Optional:
  
 
 --- 10-Fold Cross-Validation (Robustness Check) ---
+
 Model: RandomForest
-  All 10 scores: [0.839 0.839 0.8   0.767 0.8   0.967 0.733 0.767 0.8   0.733]
   Mean Accuracy: 0.804 (±0.065)
 ------------------------------
 Model: SVM
-  All 10 scores: [0.774 0.871 0.833 0.8   0.867 1.    0.7   0.833 0.733 0.767]
   Mean Accuracy: 0.818 (±0.080)
 ------------------------------
 Model: GaussianNB
-  All 10 scores: [0.677 0.871 0.767 0.767 0.8   1.    0.8   0.733 0.733 0.8  ]
   Mean Accuracy: 0.795 (±0.084)
 ------------------------------
 
 Conclusion(Optional models):
 These models have performed better according to ROC-Curve and AUC, but don’t have higher accuracy with 10-Fold Cross-Validation.
 
+
+you can look at the full report in "report.docx".
